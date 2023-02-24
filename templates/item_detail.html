@@ -9,16 +9,8 @@
     <p>Name: {{ item.name }}</p>
     <p>Description: {{ item.description }}</p>
     <p>Price: {{ item.price }}</p>
+    <form action="/buy/{{ item.id }}/" metod="GET">
     <button id="buy-button">Buy</button>
-    <script type="text/javascript">
-      var buyButton = document.getElementById('buy-button');
-      buyButton.addEventListener('click', function() {
-        fetch('/buy/{{ item.id }}', {method: 'GET'})
-           .then((response) => response.json())
-           .then((data) => console.log(data));
-
-      });
-    </script>
+    </form>
   </body>
 </html>
-

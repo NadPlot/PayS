@@ -6,7 +6,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: python /backend/manage.py runserver 0.0.0.0:8000
+    command:
+      sh -c "python /backend/manage.py runserver 0.0.0.0:8000 &&
+      python /backend/manage.py migrate"
+      
     volumes:
       - .:/backend/
     ports:
