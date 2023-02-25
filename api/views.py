@@ -37,6 +37,7 @@ class BuyAPIView(APIView):
         )
         session = stripe.checkout.Session.create(
             success_url='http://0.0.0.0:8000/success/',
+            cancel_url='http://0.0.0.0:8000/cancel/',
             line_items=[
                 {
                     'price': price.id,

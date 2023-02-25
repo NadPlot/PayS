@@ -3,7 +3,6 @@
 import os
 
 from django.db import migrations, models
-
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,7 +18,6 @@ class Migration(migrations.Migration):
     def generate_superuser(apps, schema_editor):
         from django.contrib.auth.models import User
 
-        DJANGO_DB_NAME = os.getenv('POSTGRES_DB')
         DJANGO_SU_NAME = os.getenv('DJANGO_SUPERUSER_USERNAME')
         DJANGO_SU_EMAIL = os.environ.get('DJANGO_SUPERUSER_EMAIL')
         DJANGO_SU_PASSWORD = os.environ.get('DJANGO_SUPERUSER_PASSWORD')
@@ -28,7 +26,8 @@ class Migration(migrations.Migration):
             username=DJANGO_SU_NAME,
             email=DJANGO_SU_EMAIL,
             password=DJANGO_SU_PASSWORD,
-            last_login='2023-02-24 13:44')
+            last_login='2023-02-24 13:44',
+        )
 
         superuser.save()
 
@@ -36,7 +35,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Item',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    'id', models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True, serialize=False, verbose_name='ID',
+                    ),
+                ),
                 ('name', models.CharField(max_length=200)),
                 ('description', models.CharField(max_length=250)),
                 ('price', models.IntegerField()),

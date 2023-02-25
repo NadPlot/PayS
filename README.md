@@ -4,7 +4,8 @@
 
 ### Задача
 
-Реализовать простой сервер с одной html страничкой, который общается со Stripe (stripe.com/docs - платёжная система) и создает платёжные формы для товаров.
+Реализовать простой сервер с одной html страничкой, который общается со Stripe
+(stripe.com/docs - платёжная система) и создает платёжные формы для товаров.
 Для решения нужно использовать Django.
 
 Реализовать Django + Stripe API бэкенд со следующим функционалом и условиями:
@@ -27,12 +28,11 @@
 
 	$ docker-compose up --build
 
-	$ docker-compose exec web python manage.py createsuperuser
-
 - Django Admin панель будет доступна по ссылке: http://0.0.0.0:8000/admin
+- В админ панели можно создать объект Item
 
-Логин: admin
-Пароль: **********
+- Логин: admin
+- Пароль: admin123
 
 
 ## Requirements
@@ -42,3 +42,21 @@
 - python-dotenv==0.21.1
 - psycopg2-binary==2.9.5
 - stripe==5.2.0
+
+## Пример .env
+
+	DJANGO_SECRET_KEY='django-...'
+
+	POSTGRES_USER=postgres
+	POSTGRES_PASSWORD=postgres
+	POSTGRES_SERVER=db
+	POSTGRES_PORT=5432
+	POSTGRES_DB=postgres
+	PGUSER=postgres
+
+	STRIPE_PUBLISHABLE_KEY=pk_test_...
+	STRIPE_SECRET_KEY=sk_test_...
+
+	DJANGO_SUPERUSER_PASSWORD=admin123
+	DJANGO_SUPERUSER_EMAIL=example@example.com
+	DJANGO_SUPERUSER_USERNAME=admin
