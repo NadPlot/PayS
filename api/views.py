@@ -2,16 +2,13 @@ import os
 
 import stripe
 from django.http import HttpResponseRedirect
-from dotenv import load_dotenv
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from app.models import Item
 
-load_dotenv()
-
-stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
+stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
 
 
 class ItemAPIView(APIView):

@@ -20,6 +20,15 @@
 
 Реализация выполнена на <a href='https://stripe.com/docs/payments/accept-a-payment?integration=checkout'>примере</a>, т.к. способ с помощью JS библиотеки Stripe stripe.redirectToCheckout значится как  <a href='https://stripe.com/docs/js/deprecated/redirect_to_checkout'>устаревший</a>.
 
+## Приложение на удаленном сервере
+
+По <a href='https://p01--djangotemplate--gnp8czv5jk6h.code.run/admin/'>ссылке</a> доступен вариант решения. Для входа в админ панель:
+- Логин: admin
+- Пароль: admin123
+
+В БД есть запись объекта item (id=1), по <a href='https://p01--djangotemplate--gnp8czv5jk6h.code.run/item/1/'>ссылке</a> можно проверить работу и создание платежной формы.
+
+
 ## Запуск в Docker compose
 
 Клонировать репозиторий. Подготовить файл .env (пример заполнения в env.template).
@@ -39,7 +48,6 @@
 
 - django==4.1.7
 - djangorestframework==3.14.0
-- python-dotenv==0.21.1
 - psycopg2-binary==2.9.5
 - stripe==5.2.0
 

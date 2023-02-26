@@ -3,9 +3,6 @@
 import os
 
 from django.db import migrations, models
-from dotenv import load_dotenv
-
-load_dotenv()
 
 
 class Migration(migrations.Migration):
@@ -18,7 +15,7 @@ class Migration(migrations.Migration):
     def generate_superuser(apps, schema_editor):
         from django.contrib.auth.models import User
 
-        DJANGO_SU_NAME = os.getenv('DJANGO_SUPERUSER_USERNAME')
+        DJANGO_SU_NAME = os.environ.get('DJANGO_SUPERUSER_USERNAME')
         DJANGO_SU_EMAIL = os.environ.get('DJANGO_SUPERUSER_EMAIL')
         DJANGO_SU_PASSWORD = os.environ.get('DJANGO_SUPERUSER_PASSWORD')
 
