@@ -33,9 +33,9 @@ class Migration(migrations.Migration):
             name='Item',
             fields=[
                 (
-                    'id', models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True, serialize=False, verbose_name='ID',
+                    'id', models.CharField(
+                        primary_key=True,
+                        max_length=50,
                     ),
                 ),
                 ('name', models.CharField(max_length=200)),

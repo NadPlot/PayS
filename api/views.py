@@ -24,20 +24,12 @@ class ItemAPIView(APIView):
 class BuyAPIView(APIView):
 
     def get(self, request, pk):
-        queryset = Item.objects.get(pk=pk)
-
-        product = stripe.Product.create(name=queryset.name)
-        price = stripe.Price.create(
-            unit_amount=queryset.price,
-            currency='usd',
-            product=product.id,
-        )
         session = stripe.checkout.Session.create(
             success_url='http://0.0.0.0:8000/success/',
             cancel_url='http://0.0.0.0:8000/cancel/',
             line_items=[
                 {
-                    'price': price.id,
+                    'price': pk,
                     'quantity': 1,
                 },
             ],
