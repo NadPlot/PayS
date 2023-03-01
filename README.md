@@ -26,7 +26,7 @@
 - Логин: admin
 - Пароль: admin123
 
-В БД есть запись объекта item, по <a href='https://p01--djangotemplate--gnp8czv5jk6h.code.run/item/price_1MgRH4Kmu7TNGGYCenbp6l0o/'>ссылке</a> можно проверить работу и создание платежной формы.
+В БД есть запись объекта item, по <a href='https://p01--djangotemplate--gnp8czv5jk6h.code.run/item/price_1Mgj3zKmu7TNGGYCmFumzdJg/'>ссылке</a> можно проверить работу и создание платежной формы.
 При создания и сохранении item, также создается product и price в stripe.
 В качестве item.id используется price_id созданного товара в stripe, для дальнейшего использования в stripe.checkout.Session.create().
 
