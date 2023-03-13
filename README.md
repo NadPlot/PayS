@@ -18,18 +18,7 @@
 
 ## Вариант решения
 
-Реализация выполнена на <a href='https://stripe.com/docs/payments/accept-a-payment?integration=checkout'>примере</a>, т.к. способ с помощью JS библиотеки Stripe stripe.redirectToCheckout значится как  <a href='https://stripe.com/docs/js/deprecated/redirect_to_checkout'>устаревший</a>.
-
-## Приложение на удаленном сервере
-
-По <a href='https://p01--djangotemplate--gnp8czv5jk6h.code.run/admin/'>ссылке</a> доступен вариант решения. Для входа в админ панель:
-- Логин: admin
-- Пароль: admin123
-
-В БД есть запись объекта item, по <a href='https://p01--djangotemplate--gnp8czv5jk6h.code.run/item/price_1MjdDvKmu7TNGGYCtdf7DfZc/'>ссылке</a> можно проверить работу и создание платежной формы.
-При создания и сохранении item, также создается product и price в stripe.
-В качестве item.id используется price_id созданного товара в stripe, для дальнейшего использования в stripe.checkout.Session.create().
-
+Реализация выполнена на <a href='https://stripe.com/docs/payments/accept-a-payment?integration=checkout'>примере</a>.
 
 
 ## Запуск в Docker compose
